@@ -9,7 +9,7 @@ import perfil from "../../assets/app_assets/perfil.png";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeScreen from "../screens/Home";
-import FlapScreen from "../screens/Flap";
+import HistoryNavigator from "./hisotryNavigator";
 import ActivitiesScreen from "../screens/Activities";
 import ProfileSCreen from "../screens/Profile";
 
@@ -37,7 +37,7 @@ function MyTabs() {
       />
       <Tab.Screen
         name="Flap"
-        component={FlapScreen}
+        component={HistoryNavigator}
         options={{
           tabBarIcon: () => (
             <Image source={teiaIcon} style={{ width: 33, height: 33 }} />
@@ -65,7 +65,6 @@ function MyTabs() {
           title: "PERFIL",
         }}
       />
-
     </Tab.Navigator>
   );
 }

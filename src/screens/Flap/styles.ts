@@ -12,7 +12,7 @@ export const Container = styled.View`
   justify-content: center;
 `;
 
-export const ImageContainer = styled.View`
+export const ImageContainer = styled.TouchableOpacity`
   position: relative;
   align-items: center;
   justify-content: center;
@@ -26,8 +26,10 @@ export const Title = styled.Text`
 `;
 
 export const Teia = styled(Animated.Image)<TeiaProps>`
-  width: ${(props) => (props.heightSize ? props.heightSize / 2 : "500px")};
-  height: ${(props) => (props.heightSize ? props.heightSize / 2 : "500px")};
+  width: ${(props) =>
+    props.heightSize ? `${props.heightSize / 2}px` : "500px"};
+  height: ${(props) =>
+    props.heightSize ? `${props.heightSize / 2}px` : "500px"};
   margin: 20px 0px;
 `;
 
