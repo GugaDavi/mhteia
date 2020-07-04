@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   View,
@@ -12,6 +12,9 @@ import {
 import { Container, Form, Input, BtnSub, BtnTex } from './styles';
 
 const Login: React.FC = () => {
+  const [name, setName ] = useState([]);
+  const [lastname, setLastName] = useState([]);
+
   return (
    <Container>
      <View>

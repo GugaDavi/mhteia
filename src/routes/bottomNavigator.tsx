@@ -12,7 +12,6 @@ import HomeScreen from "../screens/Home";
 import FlapScreen from "../screens/Flap";
 import ActivitiesScreen from "../screens/Activities";
 import ProfileSCreen from "../screens/Profile";
-import LoginScreen from "../screens/Login";
 
 const Tab = createBottomTabNavigator();
 
@@ -66,7 +65,7 @@ function MyTabs() {
           title: "PERFIL",
         }}
       />
-      <Tab.Screen name="Login" component={LoginScreen} />
+
     </Tab.Navigator>
   );
 }
