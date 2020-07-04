@@ -4,35 +4,24 @@ import { useIsFocused } from "@react-navigation/native";
 
 import teia from "../../../assets/app_assets/teia.png";
 
-import { Container, Title, Teia } from "./styles";
+import {
+  Container,
+  Title,
+  Teia,
+  ImageContainer,
+  Buttons,
+  FlapButton,
+  TextFlapButton,
+} from "./styles";
 
-// import { Container } from './styles';
+let rotateValue = 0;
 
 const Flap: React.FC = () => {
   const windowHeight = Dimensions.get("window").height;
+  const windowWidth = Dimensions.get("window").width;
 
   const [initialPosition] = useState(new Animated.Value(1));
-  const [initialRotate] = useState(new Animated.Value(0));
-
-  const panResponder = PanResponder.create({
-    onMoveShouldSetPanResponder: (e, g) => {
-      // if (g.dy * -1 > 0) {
-      //   Animated.spring(initialRotate, {
-      //     toValue: -1,
-      //     bounciness: 2,
-      //     useNativeDriver: true,
-      //   }).start();
-      // } else {
-      //   Animated.spring(initialRotate, {
-      //     toValue: 1,
-      //     bounciness: 2,
-      //     useNativeDriver: true,
-      //   }).start();
-      // }
-      return true;
-    },
-    onPanResponderMove: Animated.event([null, {}]),
-  });
+  const [rotate] = useState(new Animated.Value(rotateValue));
 
   const screenFocused = Animated.sequence([
     Animated.timing(initialPosition, {
@@ -47,30 +36,56 @@ const Flap: React.FC = () => {
     }),
   ]).start;
 
-  const routate = Animated.sequence([]).start;
+  const rotateImg = () => {
+    Animated.spring(rotate, {
+      toValue: rotateValue + 90,
+      bounciness: 10,
+      useNativeDriver: true,
+    }).start();
+    rotateValue += 90;
+  };
 
   useEffect(() => {
     screenFocused();
   }, [useIsFocused()]);
 
-  console.log(initialRotate);
-
   return (
     <Container>
-      <Title>Home</Title>
-      <Teia
-        {...panResponder.panHandlers}
-        source={teia}
-        heightSize={windowHeight}
-        style={[
-          {
-            transform: [
-              { scale: initialPosition },
-              { rotate: `${initialRotate}deg` },
-            ],
-          },
-        ]}
-      />
+      <Title>SELECIONE O{"\n"}GENERO TEXTUAL</Title>
+      <ImageContainer>
+        <Teia
+          source={teia}
+          heightSize={windowHeight}
+          style={[
+            {
+              transform: [
+                { scale: initialPosition },
+                {
+                  rotate: rotate.interpolate({
+                    inputRange: [0, 90, 180, 270, 360],
+                    outputRange: [
+                      "0deg",
+                      "90deg",
+                      "180deg",
+                      "270deg",
+                      "360deg",
+                    ],
+                  }),
+                },
+              ],
+            },
+          ]}
+        />
+      </ImageContainer>
+      <Buttons>
+        <FlapButton
+          onPress={() => {
+            rotateImg();
+          }}
+        >
+          <TextFlapButton>Proximo</TextFlapButton>
+        </FlapButton>
+      </Buttons>
     </Container>
   );
 };
