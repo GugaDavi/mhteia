@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigation } from "@react-navigation/native";
 
 import spiderIconH from "../../../../../assets/app_assets/aranha-h.png";
 import paisagemIcon from "../../../../../assets/app_assets/paisagem.png";
@@ -17,17 +18,19 @@ import {
 } from "./styles";
 
 const ConfirmHistory: React.FC = () => {
+  const { navigate } = useNavigation();
+
   return (
     <Container>
       <Toys>
         <SpiderH source={spiderIconH} />
       </Toys>
 
-      <BoxTex>
+      <BoxTex onPress={() => navigate("Page01")}>
         <Info>A TARTARURA E A LEBRE</Info>
       </BoxTex>
 
-      <BoxHistory>
+      <BoxHistory onPress={() => navigate("Page01")}>
         <Paisagem source={paisagemIcon} />
       </BoxHistory>
 

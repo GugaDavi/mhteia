@@ -32,7 +32,7 @@ export const Info = styled.Text`
   font-weight: bold;
 `;
 
-export const BoxHistory = styled.View`
+export const BoxHistory = styled.TouchableOpacity`
   flex: 1;
   justify-content: center;
   box-shadow: 2px 4px 4px #0af905;

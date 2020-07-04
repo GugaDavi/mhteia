@@ -6,6 +6,7 @@ const { Navigator, Screen } = createStackNavigator();
 import FlapScreen from "../screens/Flap";
 import SelectHistory from "../screens/Flap/SelectHistory";
 import ConfirmGender from "../screens/Histories/a_tartaruga_e_a_lebre/ConfirmHistory";
+import Page01 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_01";
 
 import GoBack from "../components/GoBack";
 
@@ -33,6 +34,13 @@ const HistoryNavigator: React.FC = () => {
           title: "",
           headerStyle: { backgroundColor: "#eee" },
           headerLeft: () => <GoBack />,
+        }}
+      />
+      <Screen
+        name="Page01"
+        component={Page01}
+        options={{
+          headerShown: false,
         }}
       />
     </Navigator>
