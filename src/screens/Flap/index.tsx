@@ -47,7 +47,7 @@ const Flap: React.FC = () => {
 
   const navigateTo = useCallback(() => {
     if (rotateValue === 0 || rotateValue % 360 === 0) {
-      navigate("ConfirmGender");
+      navigate("SelectHistory");
     }
   }, []);
 

@@ -1,11 +1,12 @@
 import React from "react";
-import { Image } from "react-native";
+import { Image, SafeAreaView } from "react-native";
 
 import homeIcon from "../../assets/app_assets/home.png";
 import teiaIcon from "../../assets/app_assets/teia_icon.png";
 import atividade from "../../assets/app_assets/atividades.png";
 import perfil from "../../assets/app_assets/perfil.png";
 
+import { useRoute } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeScreen from "../screens/Home";
@@ -13,14 +14,17 @@ import HistoryNavigator from "./hisotryNavigator";
 import ActivitiesScreen from "../screens/Activities";
 import ProfileSCreen from "../screens/Profile";
 
+import RouteValidation from "../utils/RouteValidation";
+
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
+const MyTabs: React.FC = (props) => {
   return (
     <Tab.Navigator
       tabBarOptions={{
-        inactiveBackgroundColor: "#0FEBDE",
-        activeBackgroundColor: "#0FEBDE",
+        inactiveBackgroundColor: "transparent",
+        activeBackgroundColor: "transparent",
+        style: { backgroundColor: "#0FEBDE" },
         activeTintColor: "#000",
         inactiveTintColor: "#000",
       }}
@@ -67,6 +71,6 @@ function MyTabs() {
       />
     </Tab.Navigator>
   );
-}
+};
 
 export default MyTabs;
