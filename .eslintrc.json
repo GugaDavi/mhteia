@@ -17,6 +17,12 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier", "import", "jsx-a11y"],
   "rules": {
+    "@typescript-eslint/explicit-function-return-typr": [
+      "error",
+      {
+        "allowExpressions": true
+      }
+    ],
     "react/jsx-filename-extension": [
       "error",
       {

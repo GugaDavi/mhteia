@@ -31,7 +31,7 @@ export const Input = styled.TextInput`
   padding-bottom: 10;
 `;
 
-export const BtnSub = styled.TouchableOpacity`
+export const BtnSub = styled.Button`
   background-color: #35AAFF;
   width: 90%;
   height: 45;

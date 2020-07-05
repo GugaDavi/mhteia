@@ -62,7 +62,7 @@ const PageComponent: React.FC<Props> = ({
   }, []);
 
   return (
-    <Container ref={scrollRef} scrollEnabled={false}>
+    <Container ref={scrollRef} scrollEnabled={true}>
       <HistoryHeader nextRoute={nextRoute} />
       <PicturesArea backgroundColor={color}>
         {imgs &&

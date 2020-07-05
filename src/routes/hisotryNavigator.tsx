@@ -11,6 +11,12 @@ import ConfirmGender from "../screens/Histories/a_tartaruga_e_a_lebre/ConfirmHis
 
 import Page01 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_01";
 import Page02 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_02";
+import Page03 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_03";
+import Page04 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_04";
+import Page05 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_05";
+import Page06 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_06";
+import Page07 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_07";
+import Page08 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_08";
 
 import GoBack from "../components/GoBack";
 
@@ -50,6 +56,48 @@ const HistoryNavigator: React.FC = () => {
       <Screen
         name="Page02"
         component={Page02}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Screen
+        name="Page03"
+        component={Page03}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Screen
+        name="Page04"
+        component={Page04}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Screen
+        name="Page05"
+        component={Page05}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Screen
+        name="Page06"
+        component={Page06}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Screen
+        name="Page07"
+        component={Page07}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Screen
+        name="Page08"
+        component={Page08}
         options={{
           headerShown: false,
         }}

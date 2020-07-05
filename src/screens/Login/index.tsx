@@ -1,19 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent } from "react";
 
 import {
   View,
   KeyboardAvoidingView,
   Image,
   TextInput,
-  TouchableOpacity,
+  Button,
   Text
 } from "react-native";
 
 import { Container, Form, Input, BtnSub, BtnTex } from './styles';
 
 const Login: React.FC = () => {
-  const [name, setName ] = useState([]);
-  const [lastname, setLastName] = useState([]);
+  const [name, setName ] = useState('');
+
+  handleAddLogin = () =>{
+    const nome = this._form.getValue();
+    console.log('nome: ', nome);
+  }
 
   return (
    <Container>
@@ -21,22 +25,19 @@ const Login: React.FC = () => {
 
      </View>
 
-     <Form>
+     <Form >
        <Input
-        placeholder="Nome"
+        placeholder="Eu me chamo:"
         autoCorrect={false}
-        onChangeText={()=> {}}
+        value={name}
        />
 
-       <Input
-        placeholder="Sobrenome"
-        autoCorrect={false}
-        onChangeText={()=> {}}
+
+       <BtnSub
+        title="Entrar"
+        onPress={}
        />
 
-       <BtnSub>
-         <BtnTex>Acessar</BtnTex>
-       </BtnSub>
 
 
      </Form>
