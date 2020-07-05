@@ -48,9 +48,16 @@ export const Spider = styled.Image`
   height: 50px;
 `;
 
-export const WordsArea = styled.View`
-  background-color: #11ff0c;
-  box-shadow: 2px 4px 4px #f7fc0a;
+interface WordsAreaProps {
+  wordsCollectionBackgroundColor?: string;
+  wordsCollectionShadowColor?: string;
+}
+
+export const WordsArea = styled.View<WordsAreaProps>`
+  background-color: ${(props) =>
+    props.wordsCollectionBackgroundColor ?? "#11ff0c"};
+  box-shadow: 2px 4px 4px
+    ${(props) => props.wordsCollectionShadowColor ?? "#f7fc0a"};
   border-radius: 20px;
   padding: 16px;
   margin: 10px;
@@ -58,7 +65,11 @@ export const WordsArea = styled.View`
 
 class FlatListType extends FlatList<string> {}
 
-export const WorksList = styled(FlatListType)``;
+export const WordList = styled(FlatListType)``;
+
+interface WordAreaProps {
+  wordsCollectionBackgroundColor: string;
+}
 
 export const WordArea = styled.TouchableOpacity`
   background-color: #eee;
@@ -72,10 +83,15 @@ export const WorkText = styled.Text`
   line-height: 21px;
 `;
 
-export const WordBox = styled.View`
+interface WordBoxProps {
+  wordsCollectionCompileBackgroundColor?: string;
+}
+
+export const WordBox = styled.View<WordBoxProps>`
   width: 49%;
   height: 28px;
-  background-color: #f7fc0a;
+  background-color: ${(props) =>
+    props.wordsCollectionCompileBackgroundColor ?? "#f7fc0a"};
   border-radius: 4px;
   margin: 5px;
   padding: 5px 10px;

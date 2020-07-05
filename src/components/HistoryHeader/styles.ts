@@ -1,12 +1,13 @@
 import styled from "styled-components/native";
+import { Platform } from "react-native";
+import { getStatusBarHeight } from "react-native-iphone-x-helper";
 
-export const Container = styled.SafeAreaView`
-  flex: 1;
-  width: 100%;
+export const Container = styled.View`
   height: 53px;
+  margin-top: ${Platform.OS === "ios" ? 10 + getStatusBarHeight() : 0}px;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  padding: 5px;
+  padding: 0px 5px;
   background-color: #eee;
 `;

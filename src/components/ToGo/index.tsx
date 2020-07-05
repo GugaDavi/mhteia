@@ -14,7 +14,7 @@ const ToGo: React.FC<Props> = ({ nextRoute }) => {
   const { navigate } = useNavigation();
 
   return (
-    <Container onPress={() => navigate(nextRoute)}>
+    <Container onPress={() => nextRoute && navigate(nextRoute)}>
       <Image
         source={goBackImg}
         style={{ width: 50, height: 50, transform: [{ rotate: "180deg" }] }}

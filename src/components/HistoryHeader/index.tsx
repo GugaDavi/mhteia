@@ -12,7 +12,11 @@ import GoBack from "../GoBack";
 import ToGo from "../ToGo";
 import ImgBox from "./components/ImgBox";
 
-const HistoryHeader: React.FC = () => {
+interface Props {
+  nextRoute: string;
+}
+
+const HistoryHeader: React.FC<Props> = ({ nextRoute }) => {
   return (
     <Container>
       <GoBack />
@@ -21,7 +25,7 @@ const HistoryHeader: React.FC = () => {
       <ImgBox source={gravar} />
       <ImgBox source={limpar} />
       <ImgBox source={ouvir} />
-      <ToGo nextRoute="" />
+      <ToGo nextRoute={nextRoute} />
     </Container>
   );
 };
