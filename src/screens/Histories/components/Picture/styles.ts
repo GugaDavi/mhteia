@@ -8,10 +8,7 @@ interface PictureProps {
 export const Container = styled(Animated.View)``;
 
 export const Picture = styled.Image<PictureProps>`
-  position: absolute;
-  top: ${(props) => props.index * 15}px;
-  left: ${(props) => props.index * 5}px;
   margin: 5px;
-  width: 100px;
-  height: 120px;
+  width: 80px;
+  height: 90px;
 `;

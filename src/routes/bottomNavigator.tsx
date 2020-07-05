@@ -1,25 +1,21 @@
 import React from "react";
-import { Image, SafeAreaView } from "react-native";
+import { Image } from "react-native";
 
 import homeIcon from "../../assets/app_assets/home.png";
 import teiaIcon from "../../assets/app_assets/teia_icon.png";
 import atividade from "../../assets/app_assets/atividades.png";
 import perfil from "../../assets/app_assets/perfil.png";
 
-import { useRoute } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeScreen from "../screens/Home";
 import HistoryNavigator from "./hisotryNavigator";
 import ActivitiesScreen from "../screens/Activities";
 import ProfileSCreen from "../screens/Profile";
-import LoginScreen from "../screens/Login";
-
-import RouteValidation from "../utils/RouteValidation";
 
 const Tab = createBottomTabNavigator();
 
-const MyTabs: React.FC = (props) => {
+const MyTabs: React.FC = () => {
   return (
     <Tab.Navigator
       tabBarOptions={{
@@ -70,7 +66,6 @@ const MyTabs: React.FC = (props) => {
           title: "PERFIL",
         }}
       />
-      <Tab.Screen name="Login" component={LoginScreen} />
     </Tab.Navigator>
   );
 };
