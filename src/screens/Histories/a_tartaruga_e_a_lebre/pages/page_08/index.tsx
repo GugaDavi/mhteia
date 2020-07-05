@@ -19,16 +19,17 @@ import ursinha from "../../assets/ursinha.png";
 
 const Page08: React.FC = () => {
   const [words] = useState([
-    "1 - E mesmo",
-    "2 - com toda",
-    "3 - a sua",
-    "4 - velocidade",
-    "5 - foi a tartaruga",
-    "7 - pisar",
-    "8 - na linha",
-    "9 - de chegada",
-    "10 - e ganhou",
-
+     "5 - foi a tartaruga",
+     "3 - a sua",
+     "1 - E mesmo",
+     "11 - a corrida.",
+     "9 - de chegada",
+     "4 - velocidade",
+     "7 - pisar",
+     "6 - que conseguiu",
+     "2 - com toda",
+     "10 - e ganhou",
+     "8 - na linha",
   ]);
   const [selectedWords] = useState([
     "",

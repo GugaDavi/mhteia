@@ -13,17 +13,20 @@ import tartaruga_largada from  "../../assets/tartaruga_largada.png";
 
 const Page05: React.FC = () => {
   const [words] = useState([
-    "1 - Chegou",
-    "2 - o dia",
-    "3 - da competição",
-    "4 - Assim que,",
-    "5 - a largada",
-    "7 - a tartaruga",
-    "8 - com seu",
-    "9 - passo lento",
-    "10 - seguiu focada",
-    "11 - com determinação",
-    "12 - e vontade",
+     "6 - foi dada",
+     "12 - e vontade",
+     "8 - com seu",
+     "9 - passo lento",
+     "10 - seguiu focada",
+     "3 - da competição",
+     "7 - a tartaruga",
+     "11 - com determinação",
+     "13 - de vencer",
+     "2 - o dia",
+     "4 - Assim que,",
+     "5 - a largada",
+     "1 - Chegou",
+
   ]);
   const [selectedWords] = useState([
     "",
