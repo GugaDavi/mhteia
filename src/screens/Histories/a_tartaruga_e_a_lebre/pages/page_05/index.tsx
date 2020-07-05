@@ -5,28 +5,27 @@ import faixa_largada from "../../assets/faixa_largada.png";
 import grama1 from "../../assets/grama1.png";
 import grama2 from "../../assets/grama2.png";
 import grama3 from "../../assets/grama3.png";
-import leao1 from  "../../assets/leao1.png";
-import raposa1 from  "../../assets/raposa1.png";
-import lebre_largada from  "../../assets/lebre_largada.png";
-import papagaio1 from  "../../assets/papagaio1.png";
-import tartaruga_largada from  "../../assets/tartaruga_largada.png";
+import leao1 from "../../assets/leao1.png";
+import raposa1 from "../../assets/raposa1.png";
+import lebre_largada from "../../assets/lebre_largada.png";
+import papagaio1 from "../../assets/papagaio1.png";
+import tartaruga_largada from "../../assets/tartaruga_largada.png";
 
 const Page05: React.FC = () => {
   const [words] = useState([
-     "6 - foi dada",
-     "12 - e vontade",
-     "8 - com seu",
-     "9 - passo lento",
-     "10 - seguiu focada",
-     "3 - da competição",
-     "7 - a tartaruga",
-     "11 - com determinação",
-     "13 - de vencer",
-     "2 - o dia",
-     "4 - Assim que,",
-     "5 - a largada",
-     "1 - Chegou",
-
+    "6 - foi dada",
+    "12 - e vontade",
+    "8 - com seu",
+    "9 - passo lento",
+    "10 - seguiu focada",
+    "3 - da competição",
+    "7 - a tartaruga",
+    "11 - com determinação",
+    "13 - de vencer",
+    "2 - o dia",
+    "4 - Assim que,",
+    "5 - a largada",
+    "1 - Chegou",
   ]);
   const [selectedWords] = useState([
     "",
@@ -42,6 +41,7 @@ const Page05: React.FC = () => {
     "",
     "",
     "13 - de vencer",
+    "",
   ]);
 
   return (
@@ -57,7 +57,6 @@ const Page05: React.FC = () => {
         lebre_largada,
         papagaio1,
         tartaruga_largada,
-
       ]}
       wordsCollection={words}
       wordsCollectionComplite={selectedWords}
