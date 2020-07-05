@@ -7,9 +7,26 @@ export const Container = styled.KeyboardAvoidingView`
   justify-content: center;
 `;
 
+export const BoxImg = styled.View`
+  position: absolute;
+  width: 147px;
+  height: 90px;
+  left: 7px;
+  top: 89px;
+`;
+
 export const ContainerLogo = styled.View`
-  flex: 1;
+  position: absolute;
   justify-content: center;
+  top: 130px;
+`;
+
+export const BoxSpider = styled.View`
+  position: absolute;
+  width: 208px;
+  height: 116px;
+  left: 200px;
+  top: 63px;
 `;
 
 export const Form = styled.View`
@@ -17,6 +34,7 @@ export const Form = styled.View`
   align-items: center;
   justify-content: center;
   width: 90%;
+  margin-top: 180px;
 `;
 
 export const Input = styled.TextInput`
@@ -36,7 +54,7 @@ interface BtnSubProps{
 }
 
 export const BtnSub = styled.TouchableOpacity<BtnSubProps>`
-  background-color: ${props => props.disable ? '#cceaff': '#35AAFF'};
+  background-color: ${props => props.disable ? '#fbeaea': '#eb9d9d'};
   width: 90%;
   height: 45;
   align-items: center;
