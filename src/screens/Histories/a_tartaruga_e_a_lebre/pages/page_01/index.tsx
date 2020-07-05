@@ -25,7 +25,7 @@ const Page01: React.FC = () => {
 
   return (
     <PageComponent
-      nextRoute=""
+      nextRoute="Page02"
       wordsCollection={words}
       wordsCollectionComplite={selectedWords}
       wordsCollectionBackgroundColor="#11ff0c"
