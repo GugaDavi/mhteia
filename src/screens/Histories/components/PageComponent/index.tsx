@@ -1,5 +1,5 @@
-import React, { useState, useCallback } from "react";
-import { View } from "react-native";
+import React, { useState, useCallback, useRef } from "react";
+import { View, ImageSourcePropType, FlatList } from "react-native";
 
 import HistoryHeader from "../../../../components/HistoryHeader";
 import pallet from "../../../../styles/palleteColor";
@@ -11,6 +11,7 @@ import Validator from "../../../../utils/Validator";
 import {
   Container,
   PicturesArea,
+  PicturesBox,
   ChangeBackgroundArea,
   ButtonColor,
   Spider,
@@ -22,10 +23,13 @@ import {
   WordBox,
 } from "./styles";
 
+import PictureComponent from "../Picture";
+
 interface Props {
   wordsCollection: string[];
   wordsCollectionComplite: string[];
   nextRoute: string;
+  imgs?: ImageSourcePropType[];
   wordsCollectionBackgroundColor?: string;
   wordsCollectionShadowColor?: string;
   wordsCollectionCompileBackgroundColor?: string;
@@ -34,6 +38,7 @@ interface Props {
 const PageComponent: React.FC<Props> = ({
   wordsCollection,
   wordsCollectionComplite,
+  imgs,
   nextRoute,
   wordsCollectionBackgroundColor,
   wordsCollectionCompileBackgroundColor,
@@ -41,6 +46,7 @@ const PageComponent: React.FC<Props> = ({
   const [color, setColor] = useState("#0FEBDE");
   const [words] = useState(wordsCollection);
   const [selectedWords, setSelectedWords] = useState(wordsCollectionComplite);
+  const scrollRef = useRef(null);
 
   const validateSequence = useCallback((value: string) => {
     const mock = selectedWords;
@@ -56,9 +62,14 @@ const PageComponent: React.FC<Props> = ({
   }, []);
 
   return (
-    <Container>
+    <Container ref={scrollRef} scrollEnabled={false}>
       <HistoryHeader nextRoute={nextRoute} />
-      <PicturesArea backgroundColor={color} />
+      <PicturesArea backgroundColor={color}>
+        {imgs &&
+          imgs.map((item, index) => (
+            <PictureComponent src={item} index={index} />
+          ))}
+      </PicturesArea>
       <Colors>
         <ChangeBackgroundArea>
           {pallet.map((item) => (
@@ -70,7 +81,14 @@ const PageComponent: React.FC<Props> = ({
           ))}
         </ChangeBackgroundArea>
       </Colors>
-      <View style={{ alignItems: "flex-end", marginTop: 5 }}>
+      <View
+        style={{
+          alignItems: "flex-end",
+          // marginTop: 5,
+          padding: 5,
+          backgroundColor: "#eee",
+        }}
+      >
         <Spider source={spiderH} />
       </View>
       <WordsArea

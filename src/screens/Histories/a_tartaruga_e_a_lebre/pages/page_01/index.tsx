@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 import PageComponent from "../../../components/PageComponent";
 
+import coelho_pulando from "../../assets/coelho_pulando.png";
+import grama1 from "../../assets/grama1.png";
+import grama2 from "../../assets/grama2.png";
+import grama3 from "../../assets/grama3.png";
+import nuvem from "../../assets/nuvem.png";
+import sol from "../../assets/sol.png";
+import arvore1 from "../../assets/arvore1.png";
+import arvore2 from "../../assets/arvore2.png";
+
 const Page01: React.FC = () => {
   const [words] = useState([
     "4 - fazendo",
@@ -26,6 +35,17 @@ const Page01: React.FC = () => {
   return (
     <PageComponent
       nextRoute="Page02"
+      imgs={[
+        coelho_pulando,
+        grama1,
+        grama2,
+        grama3,
+        nuvem,
+        nuvem,
+        sol,
+        arvore1,
+        arvore2,
+      ]}
       wordsCollection={words}
       wordsCollectionComplite={selectedWords}
       wordsCollectionBackgroundColor="#11ff0c"

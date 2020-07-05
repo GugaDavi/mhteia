@@ -9,6 +9,13 @@ interface ButtonColorProps {
   color: string;
 }
 
+export interface Positions {
+  top?: number | null | undefined;
+  right?: number | null | undefined;
+  bottom?: number | null | undefined;
+  left?: number | null | undefined;
+}
+
 export const Container = styled.ScrollView`
   flex: 1;
   background-color: #eee;
@@ -19,6 +26,14 @@ export const PicturesArea = styled.View<PicturesAreaProps>`
   width: 100%;
   height: 300px;
   background-color: ${(props) => props.backgroundColor ?? "#0FEBDE"};
+`;
+
+export const PicturesBox = styled.View`
+  position: relative;
+  width: 45%;
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden;
 `;
 
 export const Colors = styled.View`
