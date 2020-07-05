@@ -47,7 +47,7 @@ const Page08: React.FC = () => {
 
   return (
     <PageComponent
-      nextRoute=""
+      nextRoute="FinalPage"
       imgs={[
         grama1,
         grama2,

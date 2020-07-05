@@ -18,6 +18,9 @@ import Page06 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_06";
 import Page07 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_07";
 import Page08 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_08";
 
+import FinalPage from "../screens/Histories/a_tartaruga_e_a_lebre/pages/final_page";
+import PointPage from "../screens/Histories/a_tartaruga_e_a_lebre/pages/points_page";
+
 import GoBack from "../components/GoBack";
 
 const HistoryNavigator: React.FC = () => {
@@ -106,6 +109,23 @@ const HistoryNavigator: React.FC = () => {
       <Screen
         name="Page08"
         component={Page08}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+        }}
+      />
+      <Screen
+        name="FinalPage"
+        component={FinalPage}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+        }}
+      />
+
+      <Screen
+        name="PointPage"
+        component={PointPage}
         options={{
           headerShown: false,
           gestureEnabled: false,
