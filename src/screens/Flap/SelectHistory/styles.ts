@@ -16,8 +16,8 @@ export const FlapTargetBox = styled.View`
 
 export const FlapTarget = styled.Image`
   position: absolute;
-  bottom: 70px;
-  width: 500px;
+  bottom: 120px;
+  width: 400px;
   height: 500px;
 `;
 
@@ -25,14 +25,14 @@ export const SpiderH = styled.Image`
   position: absolute;
   width: 208px;
   height: 116px;
-  bottom: 70px;
+  bottom: 80px;
 `;
 
 export const SpiderF = styled.Image`
   width: 151px;
   height: 92px;
   position: absolute;
-  top: 70px;
+  top: 80px;
 `;
 
 export const History1 = styled.TouchableOpacity`
@@ -67,7 +67,8 @@ export const History3 = styled.TouchableOpacity`
   position: absolute;
   border-radius: 60px;
   bottom: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 240px;
+  left: 40%;
   box-shadow: -1px 1px 1px #ffffff;
 `;
 

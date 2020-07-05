@@ -33,6 +33,7 @@ interface Props {
   wordsCollectionBackgroundColor?: string;
   wordsCollectionShadowColor?: string;
   wordsCollectionCompileBackgroundColor?: string;
+  templateColorBackground?: string;
 }
 
 const PageComponent: React.FC<Props> = ({
@@ -42,8 +43,9 @@ const PageComponent: React.FC<Props> = ({
   nextRoute,
   wordsCollectionBackgroundColor,
   wordsCollectionCompileBackgroundColor,
+  templateColorBackground,
 }) => {
-  const [color, setColor] = useState("#0FEBDE");
+  const [color, setColor] = useState(templateColorBackground ?? "#0FEBDE");
   const [words] = useState(wordsCollection);
   const [selectedWords, setSelectedWords] = useState(wordsCollectionComplite);
   const [scrollable, setScrollable] = useState(true);
