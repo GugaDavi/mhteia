@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 
 export const Container = styled.KeyboardAvoidingView`
   flex: 1;
-  background-color: #0FEBDE;
+  background-color: #0febde;
   align-items: center;
   justify-content: center;
 `;
@@ -18,7 +18,7 @@ export const BoxImg = styled.View`
 export const ContainerLogo = styled.View`
   position: absolute;
   justify-content: center;
-  top: 130px;
+  top: 150px;
 `;
 
 export const BoxSpider = styled.View`
@@ -34,11 +34,11 @@ export const Form = styled.View`
   align-items: center;
   justify-content: center;
   width: 90%;
-  margin-top: 180px;
+  margin-top: 200px;
 `;
 
 export const Input = styled.TextInput`
-  background-color: #FFF;
+  background-color: #fff;
   width: 90%;
   margin-bottom: 18;
   color: #222;
@@ -49,12 +49,12 @@ export const Input = styled.TextInput`
   padding-bottom: 10;
 `;
 
-interface BtnSubProps{
-  disable ?: boolean,
+interface BtnSubProps {
+  disable?: boolean;
 }
 
 export const BtnSub = styled.TouchableOpacity<BtnSubProps>`
-  background-color: ${props => props.disable ? '#fbeaea': '#eb9d9d'};
+  background-color: ${(props) => (props.disable ? "#fbeaea" : "#eb9d9d")};
   width: 90%;
   height: 45;
   align-items: center;
@@ -63,8 +63,6 @@ export const BtnSub = styled.TouchableOpacity<BtnSubProps>`
 `;
 
 export const BtnTex = styled.Text`
-  color: #FFF;
+  color: #fff;
   font-size: 18;
-`
-
-
+`;

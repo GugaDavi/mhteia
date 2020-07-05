@@ -1,58 +1,59 @@
-import React, { useState, FormEvent } from "react";
-import TeiaColorida from "./assets/teia_colorida.png"
-import SpiderM from "./assets/spiderm.png"
-import SpiderH from "./assets/spiderh.png"
+import React, { useState } from "react";
+import TeiaColorida from "../../../assets/app_assets/teia2.png";
+import SpiderM from "../../../assets/app_assets/aranha-h.png";
+import SpiderF from "../../../assets/app_assets/aranha-m.png";
 import { useAuth } from "../../store/user";
-import {
-  View,
-  KeyboardAvoidingView,
-  Image,
-  TextInput,
-  TouchableOpacity,
-  Text
-} from "react-native";
+import { Image } from "react-native";
 
-import { Container, BoxImg, BoxSpider, ContainerLogo, Form, Input, BtnSub, BtnTex } from './styles';
+import {
+  Container,
+  BoxImg,
+  BoxSpider,
+  ContainerLogo,
+  Form,
+  Input,
+  BtnSub,
+  BtnTex,
+} from "./styles";
 
 const Login: React.FC = () => {
-  const [ nome, setNome] = useState('');
+  const [nome, setNome] = useState("");
   const { signIn } = useAuth();
 
-  function handleAddLogin(){
-    signIn(nome)
+  function handleAddLogin() {
+    signIn(nome);
   }
 
   return (
-   <Container>
+    <Container>
+      <BoxImg>
+        <Image source={SpiderM} />
+      </BoxImg>
 
-     <BoxImg>
-       <Image source={SpiderM}  />
-     </BoxImg>
+      <ContainerLogo>
+        <Image source={TeiaColorida} style={{ width: 266, height: 266 }} />
+      </ContainerLogo>
 
-     <ContainerLogo>
-        <Image source={TeiaColorida} />
-     </ContainerLogo>
+      <BoxSpider>
+        <Image source={SpiderF} />
+      </BoxSpider>
 
-    <BoxSpider>
-      <Image source={SpiderH} />
-    </BoxSpider>
+      <Form>
+        <Input
+          placeholder="Eu me chamo:"
+          autoCorrect={false}
+          value={nome}
+          onChangeText={(value) => setNome(value)}
+        />
 
-
-     <Form >
-       <Input
-        placeholder="Eu me chamo:"
-        autoCorrect={false}
-        value={nome}
-        onChangeText={(value) => setNome(value)}
-       />
-
-
-       <BtnSub onPress={nome.length > 3 ? handleAddLogin: () =>{}} disable = {nome.length < 4}>
-         <BtnTex>Entrar</BtnTex>
-       </BtnSub>
-
-     </Form>
-   </Container>
+        <BtnSub
+          onPress={nome.length > 3 ? handleAddLogin : () => {}}
+          disable={nome.length < 4}
+        >
+          <BtnTex>Entrar</BtnTex>
+        </BtnSub>
+      </Form>
+    </Container>
   );
 };
 
