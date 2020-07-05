@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
-import { Dimensions, Animated, PanResponder } from "react-native";
-import { useIsFocused } from "@react-navigation/native";
+import { Dimensions, Animated } from "react-native";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 
 import teia from "../../../assets/app_assets/teia.png";
 
@@ -18,7 +18,7 @@ let rotateValue = 0;
 
 const Flap: React.FC = () => {
   const windowHeight = Dimensions.get("window").height;
-  const windowWidth = Dimensions.get("window").width;
+  const { navigate } = useNavigation();
 
   const [initialPosition] = useState(new Animated.Value(1));
   const [rotate] = useState(new Animated.Value(rotateValue));
@@ -45,6 +45,12 @@ const Flap: React.FC = () => {
     rotateValue += 90;
   };
 
+  const navigateTo = useCallback(() => {
+    if (rotateValue === 0 || rotateValue % 360 === 0) {
+      navigate("SelectHistory");
+    }
+  }, []);
+
   useEffect(() => {
     screenFocused();
   }, [useIsFocused()]);
@@ -52,7 +58,7 @@ const Flap: React.FC = () => {
   return (
     <Container>
       <Title>SELECIONE O{"\n"}GENERO TEXTUAL</Title>
-      <ImageContainer>
+      <ImageContainer onPress={navigateTo}>
         <Teia
           source={teia}
           heightSize={windowHeight}
