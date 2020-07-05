@@ -38,11 +38,11 @@ const Flap: React.FC = () => {
 
   const rotateImg = () => {
     Animated.spring(rotate, {
-      toValue: rotateValue + 90,
+      toValue: rotateValue + 60,
       bounciness: 10,
       useNativeDriver: true,
     }).start();
-    rotateValue += 90;
+    rotateValue += 60;
   };
 
   const navigateTo = useCallback(() => {
@@ -68,12 +68,14 @@ const Flap: React.FC = () => {
                 { scale: initialPosition },
                 {
                   rotate: rotate.interpolate({
-                    inputRange: [0, 90, 180, 270, 360],
+                    inputRange: [0, 60, 120, 180, 240, 300, 360],
                     outputRange: [
                       "0deg",
-                      "90deg",
+                      "60deg",
+                      "120deg",
                       "180deg",
-                      "270deg",
+                      "240deg",
+                      "300deg",
                       "360deg",
                     ],
                   }),
