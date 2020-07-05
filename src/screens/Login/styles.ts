@@ -2,7 +2,7 @@ import styled from "styled-components/native";
 
 export const Container = styled.KeyboardAvoidingView`
   flex: 1;
-  background-color: #FEF3F3;
+  background-color: #0FEBDE;
   align-items: center;
   justify-content: center;
 `;
@@ -31,8 +31,12 @@ export const Input = styled.TextInput`
   padding-bottom: 10;
 `;
 
-export const BtnSub = styled.Button`
-  background-color: #35AAFF;
+interface BtnSubProps{
+  disable ?: boolean,
+}
+
+export const BtnSub = styled.TouchableOpacity<BtnSubProps>`
+  background-color: ${props => props.disable ? '#cceaff': '#35AAFF'};
   width: 90%;
   height: 45;
   align-items: center;

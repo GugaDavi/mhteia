@@ -56,6 +56,7 @@ const Page07: React.FC = () => {
       wordsCollectionBackgroundColor="#11FF0C"
       wordsCollectionShadowColor="#f7fc0a"
       wordsCollectionCompileBackgroundColor="#EB9D9D"
+      templateColorBackground="#0FEBDE"
     />
   );
 };

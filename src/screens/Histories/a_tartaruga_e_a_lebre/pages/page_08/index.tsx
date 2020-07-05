@@ -70,6 +70,7 @@ const Page08: React.FC = () => {
       wordsCollectionBackgroundColor="#0FEBDE"
       wordsCollectionShadowColor="#f7fc0a"
       wordsCollectionCompileBackgroundColor="#FF6347"
+      templateColorBackground="#F7FC0A"
     />
   );
 };

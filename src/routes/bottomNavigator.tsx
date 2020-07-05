@@ -13,6 +13,7 @@ import HomeScreen from "../screens/Home";
 import HistoryNavigator from "./hisotryNavigator";
 import ActivitiesScreen from "../screens/Activities";
 import ProfileSCreen from "../screens/Profile";
+import LoginScreen from "../screens/Login";
 
 import RouteValidation from "../utils/RouteValidation";
 
@@ -69,6 +70,7 @@ const MyTabs: React.FC = (props) => {
           title: "PERFIL",
         }}
       />
+      <Tab.Screen name="Login" component={LoginScreen} />
     </Tab.Navigator>
   );
 };

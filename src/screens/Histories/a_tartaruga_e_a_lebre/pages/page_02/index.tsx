@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import PageComponent from "../../../components/PageComponent";
 
+
 import coelho_pulando from "../../assets/coelho_pulando.png";
 import grama3 from "../../assets/grama3.png";
 import tartaruga from "../../assets/tartaruga.png";
@@ -70,6 +71,7 @@ const Page02: React.FC = () => {
       wordsCollectionBackgroundColor="#F7FC0A"
       wordsCollectionShadowColor="#f7fc0a"
       wordsCollectionCompileBackgroundColor="#0AF905"
+      templateColorBackground="#EB9D9D"
     />
   );
 };
