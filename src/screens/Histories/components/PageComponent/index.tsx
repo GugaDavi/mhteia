@@ -46,7 +46,7 @@ const PageComponent: React.FC<Props> = ({
   const [color, setColor] = useState("#0FEBDE");
   const [words] = useState(wordsCollection);
   const [selectedWords, setSelectedWords] = useState(wordsCollectionComplite);
-  const scrollRef = useRef(null);
+  const [scrollable, setScrollable] = useState(true);
 
   const validateSequence = useCallback((value: string) => {
     const mock = selectedWords;
@@ -62,13 +62,25 @@ const PageComponent: React.FC<Props> = ({
   }, []);
 
   return (
-    <Container ref={scrollRef} scrollEnabled={false}>
+    <Container scrollEnabled={scrollable}>
       <HistoryHeader nextRoute={nextRoute} />
       <PicturesArea backgroundColor={color}>
-        {imgs &&
-          imgs.map((item, index) => (
-            <PictureComponent src={item} index={index} />
-          ))}
+        {imgs && (
+          <FlatList<ImageSourcePropType>
+            contentContainerStyle={{ flexGrow: 1, alignItems: "flex-start" }}
+            data={imgs}
+            scrollEnabled={false}
+            keyExtractor={(_, index) => `${index}`}
+            numColumns={4}
+            renderItem={({ item, index }) => (
+              <PictureComponent
+                src={item}
+                index={index}
+                stopScroll={() => setScrollable(!scrollable)}
+              />
+            )}
+          />
+        )}
       </PicturesArea>
       <Colors>
         <ChangeBackgroundArea>
@@ -99,6 +111,7 @@ const PageComponent: React.FC<Props> = ({
           data={words}
           keyExtractor={(item) => item}
           numColumns={2}
+          scrollEnabled={false}
           renderItem={({ item }) => (
             <WordArea onPress={() => validateSequence(item)}>
               <WorkText>{item}</WorkText>

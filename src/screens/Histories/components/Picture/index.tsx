@@ -1,20 +1,26 @@
 import React, { useState } from "react";
-import { ImageSourcePropType, Animated, PanResponder } from "react-native";
+import {
+  ImageSourcePropType,
+  Animated,
+  PanResponder,
+  Platform,
+} from "react-native";
 
 import { Container, Picture } from "./styles";
 
 interface Props {
   src: ImageSourcePropType;
   index?: number;
+  stopScroll(): void;
 }
 
-const PictureComponent: React.FC<Props> = ({ src, index = 0 }) => {
+const PictureComponent: React.FC<Props> = ({ src, index = 0, stopScroll }) => {
   const [position] = useState(new Animated.ValueXY({ x: 0, y: 0 }));
 
   const panResponder = PanResponder.create({
     onPanResponderTerminationRequest: () => false,
     onMoveShouldSetPanResponder: (e, g) => {
-      if (g.moveY > 400) {
+      if (g.moveY > 500) {
         return false;
       }
       return true;
@@ -27,11 +33,17 @@ const PictureComponent: React.FC<Props> = ({ src, index = 0 }) => {
         dy: position.y,
       },
     ]),
-    onPanResponderGrant: (e, g) => {
+    onPanResponderGrant: () => {
+      if (Platform.OS === "ios") {
+        stopScroll();
+      }
       position.setOffset({ x: position.x._value, y: position.y._value });
       position.setValue({ x: 0, y: 0 });
     },
     onPanResponderRelease: (e, g) => {
+      if (Platform.OS === "ios") {
+        stopScroll();
+      }
       if (g.moveY > 400) {
         Animated.spring(position, {
           toValue: 0,
