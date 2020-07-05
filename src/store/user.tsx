@@ -9,7 +9,7 @@ interface Request{
 }
 
 interface UserInterface{
-  name: string | null;
+  name: string | undefined;
 }
 
 const UserContext = createContext<Request>({} as Request);
@@ -21,7 +21,7 @@ export const UserProvider:  React.FC = ({children}) => {
   }, [])
 
   const signOut = useCallback(() => {
-    setUser({name: null})
+    setUser({name: undefined})
   }, [])
   return(
     <UserContext.Provider value={{ user: user, signIn, signOut }}>
