@@ -33,6 +33,7 @@ const HistoryNavigator: React.FC = () => {
         component={SelectHistory}
         options={{
           title: "",
+
           headerStyle: { backgroundColor: "#0FEBDE" },
           headerLeft: () => <GoBack />,
         }}
@@ -51,6 +52,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page01}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -58,6 +60,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page02}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -65,6 +68,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page03}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -72,6 +76,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page04}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -79,6 +84,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page05}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -86,6 +92,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page06}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -93,6 +100,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page07}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -100,6 +108,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page08}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
     </Navigator>
