@@ -12,26 +12,26 @@ import arvore2 from "../../assets/arvore2.png";
 
 const Page06: React.FC = () => {
   const [words] = useState([
-    "1 - A Lebre",
-    "2 - saiu",
-    "3 - em disparada",
-    "4 - e quando",
-    "6 - a tartaruga",
-    "7 - estava",
-    "8 - muito",
-    "9 - longe",
-    "10 - resolveu",
-    "11 - tirar",
-    "12 - um cochilo",
+     "11 - tirar",
+     "10 - resolveu",
+     "8 - muito",
+     "12 - um cochilo",
+     "6 - a tartaruga",
+     "7 - estava",
+     "9 - longe",
+     "2 - saiu",
+     "3 - em disparada",
+     "4 - e quando",
+     "1 - A Lebre",
 
   ]);
   const [selectedWords] = useState([
     "",
     "",
-    "3 - A Lebre",
     "",
     "",
     "",
+    "6 - a tartaruga",
     "",
     "",
     "",
