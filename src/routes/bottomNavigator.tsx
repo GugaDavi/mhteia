@@ -18,6 +18,7 @@ const Tab = createBottomTabNavigator();
 const MyTabs: React.FC = () => {
   return (
     <Tab.Navigator
+      initialRouteName="Flap"
       tabBarOptions={{
         inactiveBackgroundColor: "transparent",
         activeBackgroundColor: "transparent",

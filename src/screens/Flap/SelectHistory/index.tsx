@@ -1,4 +1,5 @@
 import React from "react";
+import { View } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import spiderF from "../../../../assets/app_assets/aranha-m.png";
@@ -10,16 +11,14 @@ import historia3 from "../../../../assets/app_assets/historia3.png";
 
 import {
   Container,
+  ImgsBox,
   FlapTarget,
   SpiderH,
   SpiderF,
   FlapTargetBox,
-  History1,
-  HistoryContent1,
-  History2,
-  HistoryContent2,
-  History3,
-  HistoryContent3,
+  HistoryBox,
+  History,
+  HistoryText,
 } from "./styles";
 
 const SelectHistory: React.FC = () => {
@@ -27,20 +26,27 @@ const SelectHistory: React.FC = () => {
 
   return (
     <Container>
-      <FlapTargetBox>
+      <ImgsBox>
         <FlapTarget source={flapTarget} />
-        <History1 onPress={() => navigate("ConfirmGender")}>
-          <HistoryContent1 source={historia1} />
-        </History1>
-        <History2>
-          <HistoryContent2 source={historia2} />
-        </History2>
-        <History3>
-          <HistoryContent3 source={historia3} />
-        </History3>
+        <SpiderF source={spiderF} />
+        <SpiderH source={spiderH} />
+      </ImgsBox>
+      <FlapTargetBox>
+        <View style={{ flexDirection: "row" }}>
+          <HistoryBox onPress={() => navigate("ConfirmGender")}>
+            <History source={historia1} />
+            <HistoryText>FÁBULA</HistoryText>
+          </HistoryBox>
+          <HistoryBox>
+            <History source={historia2} />
+            <HistoryText>BIOGRAFIA</HistoryText>
+          </HistoryBox>
+        </View>
+        <HistoryBox>
+          <History source={historia3} />
+          <HistoryText>ROMANCE</HistoryText>
+        </HistoryBox>
       </FlapTargetBox>
-      <SpiderF source={spiderF} />
-      <SpiderH source={spiderH} />
     </Container>
   );
 };
