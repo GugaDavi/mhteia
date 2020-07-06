@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { ImageProperties, Animated } from "react-native";
+import { isIphoneX } from "react-native-iphone-x-helper";
 
 interface TeiaProps extends ImageProperties {
   heightSize?: number;
@@ -21,7 +22,7 @@ export const ImageContainer = styled.TouchableOpacity`
 export const FlapTextBox = styled.View`
   background-color: #000;
   padding: 10px;
-  bottom: 125px;
+  bottom: ${isIphoneX() ? 182 : 125}px;
   position: absolute;
   border-radius: 50px;
 `;

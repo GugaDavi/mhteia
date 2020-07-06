@@ -46,6 +46,8 @@ const PointPage: React.FC = () => {
       <Btn onPress={() => navigate("FlapScreen")}>
         <BtnText>IR PARA PROXIMA HISTÓRIA</BtnText>
       </Btn>
+      <Box />
+      <Box />
     </Container>
   );
 };
