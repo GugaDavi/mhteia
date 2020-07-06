@@ -18,6 +18,9 @@ import Page06 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_06";
 import Page07 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_07";
 import Page08 from "../screens/Histories/a_tartaruga_e_a_lebre/pages/page_08";
 
+import FinalPage from "../screens/Histories/a_tartaruga_e_a_lebre/pages/final_page";
+import PointPage from "../screens/Histories/a_tartaruga_e_a_lebre/pages/points_page";
+
 import GoBack from "../components/GoBack";
 
 const HistoryNavigator: React.FC = () => {
@@ -33,6 +36,7 @@ const HistoryNavigator: React.FC = () => {
         component={SelectHistory}
         options={{
           title: "",
+
           headerStyle: { backgroundColor: "#0FEBDE" },
           headerLeft: () => <GoBack />,
         }}
@@ -51,6 +55,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page01}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -58,6 +63,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page02}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -65,6 +71,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page03}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -72,6 +79,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page04}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -79,6 +87,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page05}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -86,6 +95,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page06}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -93,6 +103,7 @@ const HistoryNavigator: React.FC = () => {
         component={Page07}
         options={{
           headerShown: false,
+          gestureEnabled: false,
         }}
       />
       <Screen
@@ -100,6 +111,24 @@ const HistoryNavigator: React.FC = () => {
         component={Page08}
         options={{
           headerShown: false,
+          gestureEnabled: false,
+        }}
+      />
+      <Screen
+        name="FinalPage"
+        component={FinalPage}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
+        }}
+      />
+
+      <Screen
+        name="PointPage"
+        component={PointPage}
+        options={{
+          headerShown: false,
+          gestureEnabled: false,
         }}
       />
     </Navigator>

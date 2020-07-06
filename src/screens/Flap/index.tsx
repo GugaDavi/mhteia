@@ -1,27 +1,54 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Dimensions, Animated } from "react-native";
 import { useIsFocused, useNavigation } from "@react-navigation/native";
+import SpiderH from "../../../assets/app_assets/aranha-h2.png";
+import SpiderF from "../../../assets/app_assets/aranha-m2.png";
 
 import teia from "../../../assets/app_assets/teia.png";
 
 import {
   Container,
+  Header,
   Title,
+  Subtitle,
   Teia,
   ImageContainer,
   Buttons,
   FlapButton,
   TextFlapButton,
+  SpiderBox,
+  FlapText,
+  FlepSelectedText,
+  FlapTextBox,
 } from "./styles";
 
+interface FlapOptions {
+  index: number;
+  label: string;
+  color: string;
+}
+
 let rotateValue = 0;
+let flapIndex = 0;
 
 const Flap: React.FC = () => {
-  const windowHeight = Dimensions.get("window").height;
-  const { navigate } = useNavigation();
-
   const [initialPosition] = useState(new Animated.Value(1));
   const [rotate] = useState(new Animated.Value(rotateValue));
+  const [flapOptions] = useState<FlapOptions[]>([
+    { index: 0, label: "Retalho Vermelho", color: "#FC0A0A" },
+    { index: 5, label: "Retalho Verde", color: "#0AF905" },
+    { index: 4, label: "Retalho Rosa", color: "#eb9d9d" },
+    { index: 3, label: "Retalho Azul", color: "#0FEBDE" },
+    { index: 2, label: "Retalho Roxo", color: "#DA70D6" },
+    { index: 1, label: "Retalho Amarelo", color: "#F7FC0A" },
+  ]);
+
+  const [flapSelected, setFlapSelected] = useState<FlapOptions>(
+    flapOptions[flapIndex]
+  );
+
+  const windowHeight = Dimensions.get("window").height;
+  const { navigate } = useNavigation();
 
   const screenFocused = Animated.sequence([
     Animated.timing(initialPosition, {
@@ -43,6 +70,11 @@ const Flap: React.FC = () => {
       useNativeDriver: true,
     }).start();
     rotateValue += 60;
+    flapIndex += 1;
+    if (flapIndex > 5) {
+      flapIndex = 0;
+    }
+    setFlapSelected(flapOptions[flapIndex]);
   };
 
   const navigateTo = useCallback(() => {
@@ -57,7 +89,15 @@ const Flap: React.FC = () => {
 
   return (
     <Container>
-      <Title>SELECIONE O{"\n"}GENERO TEXTUAL</Title>
+      <Header>
+        <SpiderBox source={SpiderF} />
+        <Title>ESCOLHA UM{"\n"}DOS RETALHOS</Title>
+      </Header>
+
+      <FlepSelectedText colorSelected={flapSelected.color}>
+        {flapSelected.label}
+      </FlepSelectedText>
+
       <ImageContainer onPress={navigateTo}>
         <Teia
           source={teia}
@@ -84,14 +124,21 @@ const Flap: React.FC = () => {
             },
           ]}
         />
+        <FlapTextBox>
+          <FlapText>
+            Teia de{"\n"}Retalhos{"\n"}Textuais
+          </FlapText>
+        </FlapTextBox>
       </ImageContainer>
+      <Subtitle>Toque na teia para confirmar</Subtitle>
       <Buttons>
+        <SpiderBox source={SpiderH} />
         <FlapButton
           onPress={() => {
             rotateImg();
           }}
         >
-          <TextFlapButton>Proximo</TextFlapButton>
+          <TextFlapButton>Girar</TextFlapButton>
         </FlapButton>
       </Buttons>
     </Container>

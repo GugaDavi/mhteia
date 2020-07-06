@@ -16,20 +16,19 @@ import papagaio1 from "../../assets/papagaio1.png";
 import macaquinho from "../../assets/macaquinho.png";
 import ursinha from "../../assets/ursinha.png";
 
-
 const Page08: React.FC = () => {
   const [words] = useState([
-     "5 - foi a tartaruga",
-     "3 - a sua",
-     "1 - E mesmo",
-     "11 - a corrida.",
-     "9 - de chegada",
-     "4 - velocidade",
-     "7 - pisar",
-     "6 - que conseguiu",
-     "2 - com toda",
-     "10 - e ganhou",
-     "8 - na linha",
+    "5 - foi a tartaruga",
+    "3 - a sua",
+    "1 - E mesmo",
+    "11 - a corrida.",
+    "9 - de chegada",
+    "4 - velocidade",
+    "7 - pisar",
+    "6 - que conseguiu",
+    "2 - com toda",
+    "10 - e ganhou",
+    "8 - na linha",
   ]);
   const [selectedWords] = useState([
     "",
@@ -43,11 +42,12 @@ const Page08: React.FC = () => {
     "",
     "",
     "11 - a corrida.",
+    "",
   ]);
 
   return (
     <PageComponent
-      nextRoute="Page03"
+      nextRoute="FinalPage"
       imgs={[
         grama1,
         grama2,
@@ -62,9 +62,7 @@ const Page08: React.FC = () => {
         faixa_largada,
         papagaio1,
         macaquinho,
-        ursinha
-
-
+        ursinha,
       ]}
       wordsCollection={words}
       wordsCollectionComplite={selectedWords}
