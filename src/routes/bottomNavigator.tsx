@@ -8,6 +8,8 @@ import perfil from "../../assets/app_assets/perfil.png";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+
+
 import HomeScreen from "../screens/Home";
 import HistoryNavigator from "./hisotryNavigator";
 import ActivitiesScreen from "../screens/Activities";
